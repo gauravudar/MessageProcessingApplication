@@ -22,7 +22,7 @@ public class SalesProcessorTest extends TestCase {
 		assertTrue(out.toString().contains("***************Adjustment Report after 50 sales *****************"));	
 	}
 
-	public void testGenerateAndPrintSalesReportWithWrongFilePath() throws Exception {
+	public void testGenerateAndPrintSalesReportWithWrongData() throws Exception {
 		try {
 			salesProcessor.readInputMessageDataAndPrintReports(new FileReader("testmessages/wrongInputData.txt"));
 		}
