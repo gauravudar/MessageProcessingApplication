@@ -3,6 +3,7 @@
 Implement a small message processing application that satisfies the below requirements for
 processing sales notification messages. You should assume that an external company will be sending
 you the input messages, but for the purposes of this exercise you are free to define the interfaces.
+
 **Processing requirements**
 * All sales must be recorded
 * All messages must be processed
@@ -17,9 +18,9 @@ you the input messages, but for the purposes of this exercise you are free to de
 * Message Type 3 – contains the details of a sale and an adjustment operation to be applied to all stored sales of this product type.   Operations can be add, subtract, or multiply e.g Add 20p apples would instruct your application to add 20p to each sale   of apples you have recorded.    
 
 ## Solution  
-Solution implements a SalesProcessor class which uses different classes defined for Product, Sale, MessageParser and enums OperationType and ProductType to print the desired output. 
+Solution implements a SalesProcessor class which uses different classes defined like Product, Sale, MessageParser and enums OperationType and ProductType to print the desired output. 
 
-There are 2 Junit test classes which will test the Major functionlity of the code.
+There are 2 Junit test classes which will test the Major functionality of the code.
 
 ## Assumptions  
 * The sale items are defined in enum ProductType.We can add new Product Type here.
