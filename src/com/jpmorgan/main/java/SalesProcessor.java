@@ -3,7 +3,6 @@ package com.jpmorgan.main.java;
 import static java.util.stream.Collectors.groupingBy;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -23,12 +22,12 @@ public class SalesProcessor {
     public static void main(String[] args) {
     	try {
 			readInputMessageDataAndPrintReports(new FileReader(INPUT_FILE_PATH));
-		} catch (Exception e) {
-			e.printStackTrace();
+		} catch (Exception ex) {
+			ex.printStackTrace();
 		}
     }
 
-	public static void readInputMessageDataAndPrintReports(FileReader fileReader) {
+	public static void readInputMessageDataAndPrintReports(FileReader fileReader){
 		// Read inputs from test file and generate sale and adjustment reports
         try {
             String line;
@@ -47,8 +46,8 @@ public class SalesProcessor {
                     break;
                 }
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
 	}
 
