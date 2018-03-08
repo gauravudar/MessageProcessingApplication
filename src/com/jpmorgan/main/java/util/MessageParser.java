@@ -21,40 +21,40 @@ public class MessageParser {
         if (message == null || message.isEmpty()) {
             return;
         }
-        String[] messageArray = message.trim().split("\\s+");
-        String firstWord = messageArray[0];
+        String[] splittedMessage = message.trim().split("\\s+");
+        String firstWord = splittedMessage[0];
         if (firstWord.matches("Add|Subtract|Multiply")) {
-             parseMessageType3(messageArray);
+             parseMessageType3(splittedMessage);
         } else if (firstWord.matches("^\\d+")) {
-             parseMessageType2(messageArray);
-        } else if (messageArray.length == 3 && ProductType.fromCode(parseProdType(messageArray[0]))!=null) {
-             parseMessageType1(messageArray);
+             parseMessageType2(splittedMessage);
+        } else if (splittedMessage.length == 3 && ProductType.fromCode(parseProdType(splittedMessage[0]))!=null) {
+             parseMessageType1(splittedMessage);
         } else {
             System.out.println("This message type is not supported");
         }
     }
 
     // Parse message type 1
-    private void parseMessageType1(String[] messageArray) {
-        product.setProductType(ProductType.fromCode(parseProdType((messageArray[0]))));
-        product.setPrice(parsePrice(messageArray[2]));
+    private void parseMessageType1(String[] splittedMessage) {
+        product.setProductType(ProductType.fromCode(parseProdType((splittedMessage[0]))));
+        product.setPrice(parsePrice(splittedMessage[2]));
         product.setQuantity(1); //This will be always 1
     }
 
     // Parse message type 2
-    private void parseMessageType2(String[] messageArray) {
-        if(messageArray.length > 7 || messageArray.length < 7) return;
-        product.setProductType(ProductType.fromCode(parseProdType(messageArray[3])));
-        product.setPrice(parsePrice(messageArray[5]));
-        product.setQuantity(Long.parseLong(messageArray[0]));
+    private void parseMessageType2(String[] splittedMessage) {
+        if(splittedMessage.length > 7 || splittedMessage.length < 7) return;
+        product.setProductType(ProductType.fromCode(parseProdType(splittedMessage[3])));
+        product.setPrice(parsePrice(splittedMessage[5]));
+        product.setQuantity(Long.parseLong(splittedMessage[0]));
     }
 
     // Parse message type 3
-    private void parseMessageType3(String[] messageArray) {
-        if(messageArray.length > 3 || messageArray.length < 3) return;
-        product.setOperationType(OperationType.fromCode(messageArray[0]));
-        product.setProductType(ProductType.fromCode(parseProdType(messageArray[2])));
-        product.setPrice(parsePrice(messageArray[1]));
+    private void parseMessageType3(String[] splittedMessage) {
+        if(splittedMessage.length > 3 || splittedMessage.length < 3) return;
+        product.setOperationType(OperationType.fromCode(splittedMessage[0]));
+        product.setProductType(ProductType.fromCode(parseProdType(splittedMessage[2])));
+        product.setPrice(parsePrice(splittedMessage[1]));
     }
 
     // handle the plural cases of the products
