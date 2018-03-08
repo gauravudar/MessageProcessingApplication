@@ -23,12 +23,12 @@ public class SalesProcessor {
     public static void main(String[] args) {
     	try {
 			readInputMessageDataAndPrintReports(new FileReader(INPUT_FILE_PATH));
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
     }
 
-	public static void readInputMessageDataAndPrintReports(FileReader fileReader) throws FileNotFoundException{
+	public static void readInputMessageDataAndPrintReports(FileReader fileReader) {
 		// Read inputs from test file and generate sale and adjustment reports
         try {
             String line;
