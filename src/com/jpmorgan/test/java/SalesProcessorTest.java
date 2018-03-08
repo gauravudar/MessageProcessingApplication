@@ -15,14 +15,14 @@ public class SalesProcessorTest extends TestCase {
 		salesProcessor = new SalesProcessor();	
 	}
 	
-	public void testGenerateAndPrintTradeReport() throws Exception {
+	public void testGenerateAndPrintSalesReport() throws Exception {
 		final ByteArrayOutputStream out = new ByteArrayOutputStream();
 		System.setOut(new PrintStream(out));
 		salesProcessor.readInputMessageDataAndPrintReports(new FileReader("testmessages/inputData.txt"));
 		assertTrue(out.toString().contains("***************Adjustment Report after 50 sales *****************"));	
 	}
 
-	public void testGenerateAndPrintTradeReportWithWrongFilePath() throws Exception {
+	public void testGenerateAndPrintSalesReportWithWrongFilePath() throws Exception {
 		try {
 			salesProcessor.readInputMessageDataAndPrintReports(new FileReader("testmessages/wrongInputData.txt"));
 		}
