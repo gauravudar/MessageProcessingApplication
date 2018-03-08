@@ -37,5 +37,8 @@ There are 2 Junit test classes which will test the Major functionality of the co
 ## How to use?
 You can use any IDE of your choice e.g, Intellij, Netbeans or Eclipse, the project has main method in class named SalesProcessor using which you can run the project and get the output on console.
 Additionaly you can run SalesProcessorTest method testGenerateAndPrintTradeReport to print the report on console.
-## Requirements- Java 1.8
-## Junit - You need junit 4.12 or latest version to run the tests.
+## Requirements- 
+Java 1.8 and Junit 4.12 Jar
+
+## Junit - 
+You need junit 4.12 or latest version to run the tests.
